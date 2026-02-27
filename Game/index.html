@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Story Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-wrapper">
+            <!-- Header -->
+            <div class="game-header">
+                <h1 id="gameTitle">The Lost City</h1>
+                <div class="game-stats">
+                    <span id="chapterCounter">Chapter 1</span>
+                </div>
+            </div>
+
+            <!-- Story Display Area -->
+            <div class="story-area">
+                <div id="storyText" class="story-text">
+                    <!-- Story content will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Choices Display Area -->
+            <div class="choices-area">
+                <div id="choicesContainer" class="choices-container">
+                    <!-- Choice buttons will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Game Status -->
+            <div class="game-footer">
+                <button id="restartBtn" class="restart-btn" onclick="restartGame()">Restart Game</button>
+                <div id="gameStatus" class="game-status"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="story.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
