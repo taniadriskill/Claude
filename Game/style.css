@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Garamond', serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #e0e0e0;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.game-wrapper {
+    background: linear-gradient(to bottom, #0f3460, #16213e);
+    border: 3px solid #00b197;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 177, 151, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+}
+
+/* Header */
+.game-header {
+    background: linear-gradient(90deg, #00b197 0%, #00d4aa 100%);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 2px solid rgba(0, 177, 151, 0.5);
+}
+
+.game-header h1 {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.game-stats {
+    font-size: 1em;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+#chapterCounter {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.95em;
+}
+
+/* Story Area */
+.story-area {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    max-height: 300px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.story-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #e0e0e0;
+    text-align: justify;
+    animation: fadeIn 0.6s ease-in;
+}
+
+.story-text p {
+    margin-bottom: 15px;
+}
+
+.story-text p:first-child {
+    margin-top: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Choices Area */
+.choices-area {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(0, 177, 151, 0.3);
+}
+
+.choices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.choice-btn {
+    background: linear-gradient(135deg, #00b197 0%, #00a084 100%);
+    border: 2px solid #00b197;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: inherit;
+    text-align: left;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 177, 151, 0.2);
+}
+
+.choice-btn:hover {
+    background: linear-gradient(135deg, #00d4aa 0%, #00b197 100%);
+    transform: translateX(10px);
+    box-shadow: 0 6px 20px rgba(0, 177, 151, 0.4);
+}
+
+.choice-btn:active {
+    transform: translateX(8px);
+}
+
+.choice-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Footer */
+.game-footer {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-top: 1px solid rgba(0, 177, 151, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.restart-btn {
+    background: #666;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.restart-btn:hover {
+    background: #777;
+    transform: scale(1.05);
+}
+
+.game-status {
+    text-align: right;
+    font-size: 0.95em;
+    color: #00d4aa;
+}
+
+.ending-message {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 15px;
+    background: rgba(0, 177, 151, 0.1);
+    border: 2px solid #00b197;
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #00d4aa;
+}
+
+/* Scrollbar Styling */
+.story-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.story-area::-webkit-scrollbar-track {
+    background: rgba(0, 177, 151, 0.1);
+    border-radius: 4px;
+}
+
+.story-area::-webkit-scrollbar-thumb {
+    background: #00b197;
+    border-radius: 4px;
+}
+
+.story-area::-webkit-scrollbar-thumb:hover {
+    background: #00d4aa;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .game-header h1 {
+        font-size: 1.8em;
+    }
+
+    .story-area {
+        padding: 25px;
+        max-height: 250px;
+    }
+
+    .story-text {
+        font-size: 1em;
+    }
+
+    .choices-area {
+        padding: 20px;
+    }
+
+    .game-footer {
+        flex-direction: column;
+    }
+
+    .game-status {
+        text-align: center;
+    }
+}
